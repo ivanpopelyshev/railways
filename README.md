@@ -5,7 +5,7 @@ Railways game based on pixi.js and its plugins. All visual art is property of Ru
 
 # Demos
 
-[Playable version for russian railways](https://gameofbombs.com/demos/railroad/v3/)
+[Playable version for russian railways](https://gameofbombs.com/demos/railroad/v3/#/game)
 
 [First demo, station-based screen transition](https://gameofbombs.com/demos/railroad/)
 
@@ -13,11 +13,11 @@ Railways game based on pixi.js and its plugins. All visual art is property of Ru
 
 [Dizzy](https://gameofbombs.com/demos/railroad/v2.1/)
 
-[Just a train, no obstacles](https://gameofbombs.com/demos/railways/public/)
+[Just a train, no obstacles](https://gameofbombs.com/demos/railways/public/#/game)
 
-[Pack of delorians, pixi-particles](https://gameofbombs.com/demos/railways/public2/)
+[Pack of delorians, pixi-particles](https://gameofbombs.com/demos/railways/public2/#/game)
 
-[Noclip](https://gameofbombs.com/demos/railways/public3/)
+[Noclip](https://gameofbombs.com/demos/railways/public3/#/game)
 
 # Old bug screenshots
 
