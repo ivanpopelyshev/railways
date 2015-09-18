@@ -15,7 +15,9 @@ Railways game based on pixi.js and its plugins. All visual art is property of Ru
 
 [Just a train, no obstacles](https://gameofbombs.com/demos/railways/public/)
 
-[Pack of delorians](https://gameofbombs.com/demos/railways/public/v2/)
+[Pack of delorians](https://gameofbombs.com/demos/railways/public2/)
+
+[Noclip](https://gameofbombs.com/demos/railways/public3/)
 
 # Old bug screenshots
 
