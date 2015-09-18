@@ -1,0 +1,12 @@
+{
+   "db" : {
+     "host": "localhost",
+     "user": "root",
+     "password": "crazyBiz2013",
+     "database": "railroad"
+   },
+   "config" : {
+       "lives": 100,
+       "salt" : "some-salt"
+   }
+}
