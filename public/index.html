@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimum-scale=1, width=device-width, height=device-height">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <base href="/"/>
+    <title>Railroad demo</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <style>
+        canvas {
+        }
+
+        .game-canvas {
+            position: absolute;
+            /*image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -o-crisp-edges;
+            image-rendering: optimize-contrast;
+            -ms-interpolation-mode: nearest-neighbor;*/
+        }
+
+        .outer-container {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            overflow: hidden;
+        }
+
+        .inner-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #frontCanvas {
+            pointer-events: none;
+        }
+    </style>
+
+    <script src="lib/jquery.min.js"></script>
+
+    <!-- for debug -->
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
+    <script src="lib/angular-animate.js"></script>
+
+    <!-- for production -->
+    <!--
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="lib/angular-animate.min.js"></script>
+    -->
+    <script src="bin/game.js"></script>
+    <script src ="lib/pixi/pixi-particles.js"></script>
+    <script>
+        app.run(function($rootScope){ $rootScope.options = {
+            width: 1200,
+            height: 720,
+            trainStartSpeed: 35,
+            trainRandomWaySpeed: 50,
+            trainMaxSpeed: 90,
+            trainDistanceBeforeMaxSpeed: 10000,
+            traction: 1.8,
+            startWays: 3,
+            minWays: 3,
+            maxWays: 6,
+            railsSize: 3,
+            grav: 1,
+            ajax: 1,
+            backCanvas: 2
+        } });
+    </script>
+</head>
+<body ng-app="app">
+    <audio style="display:none" id="theme">
+        <source src="assets/Roboskater.mp3" type='audio/mp3'>
+        <source src="assets/Roboskater.ogg" type='audio/ogg'>
+    </audio>
+    <div ng-include="'tmpl/main.html'"></div>
+</body>
+</html>

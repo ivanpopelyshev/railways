@@ -1,0 +1,20 @@
+
+shlagbaum.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+base
+  rotate: false
+  xy: 2, 2
+  size: 156, 89
+  orig: 156, 89
+  offset: 0, 0
+  index: -1
+pole
+  rotate: false
+  xy: 2, 93
+  size: 230, 31
+  orig: 230, 31
+  offset: 0, 0
+  index: -1

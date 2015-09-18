@@ -1,0 +1,154 @@
+.page-wrapper.rating {
+	
+	width: 80rem;
+	//margin-top: 2rem;
+	//margin-left: 2rem;
+	display: block;
+	text-align: center;
+	position: absolute;
+	top: 10%;
+	left: 5%;
+	height: 62rem;
+
+	.rating-pager-wrapper{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 6rem;
+		background-color: fade(@window-blue-light, 60%);
+		border-radius: 1.5rem;
+		text-align: left;
+		padding: 0.5rem 1.2rem;
+		box-sizing:border-box;
+	}
+
+	.rating-top-link, .rating-me-link{
+		display: inline-block;
+		margin: 0.8rem 2rem;
+		width: 10rem;
+
+		.link-txt{
+			color: @color-light-1;
+			font-family: 'GProExtend', Tahoma, Arial;
+			font-size: 2.2rem;
+		}
+	}
+
+	.rating-pager{
+
+		display: inline-block;
+		margin: 0.8rem 2rem;
+		text-align: center;
+		min-width: 38rem;
+
+		&.center{
+			width: 100%;
+		}
+
+		.page-item{
+
+			display: inline-block;
+			//color: @color-light-1;
+			color: #DBF1FE;
+			font-family: 'GProExtend', Tahoma, Arial;
+			font-size: 1.8rem;
+			border-radius: 50%;
+			//border: 2px solid @color-light-1;
+			margin: 0 0.8rem;
+			padding: 0.6rem;
+			cursor: pointer;
+
+			&.active{
+				//border: 2px solid @btn-blue;
+				//color: @btn-blue;
+				color: @color-light-1;
+    			text-decoration: underline;
+			}
+
+		}
+
+	}
+
+	.rating-me-link{
+		display: inline-block;
+	}
+
+
+
+
+	.game-rating{
+
+	}
+
+	.game-rating-list{
+
+		.game-rating-item{
+
+			display: block;
+	    	width: 100%;
+			border-radius: 1.5rem;
+			margin-bottom: 0.8rem;
+			background-color: fade(@window-blue-light, 60%);
+			box-sizing: border-box;
+			height: 4.2rem;
+			padding: 1rem;
+			position: relative;
+
+			&.rating-header{
+
+				.rating-item-position{
+					color: #DBF1FE;
+				}
+
+				.rating-item-score{
+					color: #DBF1FE;
+				}
+
+				.rating-item-nickname{
+					color: #DBF1FE;
+					font-size: 2.1rem;
+				}
+
+			}
+
+		}
+
+		.rating-item-position{
+			display: inline-block;
+			width: 25%;
+			color: @color-light-1;
+			font-family: 'GProExtend', Verdana, Tahoma;
+			font-size: 2.1rem;
+			overflow: hidden;
+			vertical-align: top;
+		}
+
+		.rating-item-nickname{
+			display: inline-block;
+			width: 35%;
+			color: @color-light-1;
+			font-family: 'GProExtend', Verdana, Tahoma;
+			font-size: 1.7rem;
+			overflow: hidden;
+
+			&.longname{
+				position: relative;
+    			top: -0.8rem;
+			}
+		}
+
+		.rating-item-score{
+			display: inline-block;
+			width: 30%;
+			vertical-align: top;
+			font-family: 'GProExtend', Verdana, Tahoma;
+			font-size: 2.1rem;
+			color: @color-light-1;
+			overflow: hidden;
+		}
+
+
+
+	}
+
+}

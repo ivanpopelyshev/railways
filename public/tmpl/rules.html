@@ -1,0 +1,84 @@
+<div class="main-ui" ng-controller="RulesCtrl">
+
+	<div class="game-menu start">
+	<ul class="game-menu-list">
+		<li class="game-menu-item play-item animated"><span ui-sref="game" class="game-menu-txt"> Играть </span></li>
+		<li class="game-menu-item animated"><span ui-sref="rules" class="game-menu-txt">Правила</span></li>
+		<li class="game-menu-item animated"><span ui-sref="rating" class="game-menu-txt">Рейтинг</span></li>
+	</ul>
+	</div>
+
+	<div class="page-wrapper rules">
+		<div class="rules-pager">
+			<span class="rule-pointer" data-rule="1" ng-click="active_rule=1" ng-class="active_rule==1?'active':''"></span>
+			<span class="rule-pointer" data-rule="2"  ng-click="active_rule=2" ng-class="active_rule==2?'active':''"></span>
+			<span class="rule-pointer" data-rule="3"  ng-click="active_rule=3" ng-class="active_rule==3?'active':''"></span>
+			<span class="rule-pointer" data-rule="4"  ng-click="active_rule=4" ng-class="active_rule==4?'active':''"></span>
+			<span class="rule-pointer" data-rule="5"  ng-click="active_rule=5" ng-class="active_rule==5?'active':''"></span>
+			<span class="rule-pointer" data-rule="6"  ng-click="active_rule=6" ng-class="active_rule==6?'active':''"></span>
+			<span class="rule-pointer" data-rule="7"  ng-click="active_rule=7" ng-class="active_rule==7?'active':''"></span>
+			<span class="rule-pointer" data-rule="8"  ng-click="active_rule=8" ng-class="active_rule==8?'active':''"></span>
+			<span class="rule-pointer" data-rule="9"  ng-click="active_rule=9" ng-class="active_rule==9?'active':''"></span>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==1">
+			<div class="inner-rule-item">
+				<div class="rule-item-img default rule-img-1"></div>
+                <div class="rule-item-txt"> «Российские железные дороги» предлагают тебе принять участие в игре &laquo;Поезд на ИгроМир&raquo; и получить в подарок билет на самую ожидаемую игровую выставку года &laquo;ИгроМир 2015&raquo;. Для этого ты должен набрать наибольшее количество очков в игре! </div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==2">
+			<div class="inner-rule-item">
+				<div class="rule-item-img-wrap-top">
+					<div class="rule-item-img rule-img-2"></div>
+				</div>
+				<div class="rule-item-txt">В нашей игре ты станешь машинистом поезда, на пути которого постоянно возникают разные препятствия.</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==3">
+			<div class="inner-rule-item">
+				<div class="rule-item-img-wrap-top">
+					<div class="rule-item-img rubbish"></div>
+					<div class="rule-item-img car"></div>
+					<div class="rule-item-img children"></div>
+					<div class="rule-item-img walker"></div>
+				</div>
+				<div class="rule-item-txt">Это могут быть люди на путях, играющие на них же дети, неожиданные &laquo;попутчики&raquo;, залезающие на вагоны, или мусор, который кто-то &laquo;заботливо&raquo; положил прямо на рельсы.</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==4">
+			<div class="inner-rule-item">
+				<div class="rule-item-txt">Возникновение препятствий на пути заставляет машиниста экстренно затормаживать поезд, чтобы избежать катастрофы. Твоя задача &mdash; заблаговременно устранять помехи с пути поезда.</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==5">
+			<div class="inner-rule-item">
+				<div class="rule-item-img rule-img-4"></div>
+				<div class="rule-item-txt">Чтобы состав продолжал движение, нужно вовремя убирать препятствия. Чем дальше ты проедешь, тем больше очков наберешь.</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==6">
+			<div class="inner-rule-item">
+				<div class="rule-item-img rule-img-5"></div>
+				<div class="rule-item-txt">Каждый день у тебя будет три попытки набрать максимальное количество очков. </div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==7">
+			<div class="inner-rule-item">
+
+				<div class="rule-item-txt">Игра продлится месяц, и по итогам будут определены 20 человек, показавших лучший результат — при этом будет учитываться не сумма очков за все время, а результаты твоего лучшего заезда. Новый день наступает в 12 часов ночи по московскому времени</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==8">
+			<div class="inner-rule-item">
+				<div class="rule-item-txt">Принять участие в игре могут все желающие, но помни, что в таблице рейтинга фиксируются результаты только в том случае, если ты зарегистрирован на Канобу, либо прошел авторизацию на сайте через социальные сети.</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==9">
+			<div class="inner-rule-item">
+
+				<div class="rule-item-txt">Участвовать могут жители любого города, но напоминаем, что в конкурсе разыгрываются только билеты на само мероприятие. Желаем удачи!</div>
+			</div>
+		</div>
+	</div>
+
+</div>

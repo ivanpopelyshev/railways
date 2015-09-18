@@ -1,0 +1,20 @@
+
+horn.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+horn
+  rotate: false
+  xy: 2, 46
+  size: 120, 70
+  orig: 120, 70
+  offset: 0, 0
+  index: -1
+sound
+  rotate: false
+  xy: 2, 2
+  size: 48, 42
+  orig: 48, 42
+  offset: 0, 0
+  index: -1

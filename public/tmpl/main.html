@@ -1,0 +1,356 @@
+<canvas-container canvas-width="1600" canvas-height="960">
+    <viewport>
+        <ui>
+        	<!--<div ng-include="'tmpl/start.html'" scope="" onload="" ng-controller="MainUiCtrl"></div>-->
+        	<div ui-view="view-main" class="view-main-router" ng-show="!game_active" ></div>
+        	<!--<div ui-view="view-msg" class="message-box" ng-controller="TipsCtrl">
+        		<div ng-include="'tmpl/includes/'+current_tip +'.tip.html'" scope="" onload="" ng-if="is_opened"></div>
+        	</div>-->
+        </ui>
+    </viewport>
+    <div class="fullscreen-btn" ng-click="toggleFullscreen()"></div>
+</canvas-container>
+
+<!--
+<a ui-sref="start">Start</a>
+<a ui-sref="game">Game</a>
+<a ui-sref="rules">Rules</a>
+<a ui-sref="rating">Rating</a>
+
+<ui-view/>
+-->
+
+<!-- preload templates -->
+
+<!-- viewport -->
+<script type="text/ng-template" id="tmpl/viewport.html">
+
+<div class="viewport"></div>
+<div class="uiport" ng-show="!game_active" ng-transclude></div>
+
+<div ui-view="view-msg" class="message-box" ng-controller="TipsCtrl" ng-show="game_active">
+    <div ng-if="is_opened">
+		<div ng-include="'tmpl/includes/'+current_tip +'.tip.html'" scope="" onload="" class="view-msg-container"></div>
+	</div>
+	<div ng-include="'tmpl/includes/game_over.window.html'" scope="" onload="" ng-if="game_finished"></div>
+</div>
+
+</script>
+
+<!-- start -->
+<script type="text/ng-template" id="tmpl/start.html">
+
+<div class="main-ui" ng-controller="MainUiCtrl">
+	<div class="game-name"></div>
+	<div class="rjd-name"></div>
+
+	<div class="game-menu start">
+	<ul class="game-menu-list">
+		<li class="game-menu-item play-item animated"><span ui-sref="game" class="game-menu-txt"> Играть </span></li>
+		<li class="game-menu-item animated"><span ui-sref="rules" class="game-menu-txt">Правила</span></li>
+		<li class="game-menu-item animated"><span ui-sref="rating" class="game-menu-txt">Рейтинг</span></li>
+	</ul>
+	</div>
+
+	<div class="page-wrapper">
+		<div class="default-image"></div>
+	</div>
+
+</div>
+
+</script>
+
+
+<!-- rules -->
+<script type="text/ng-template" id="tmpl/rules.html">
+
+<div class="main-ui" ng-controller="RulesCtrl">
+
+	<div class="game-menu start">
+	<ul class="game-menu-list">
+		<li class="game-menu-item play-item animated"><span ui-sref="game" class="game-menu-txt"> Играть </span></li>
+		<li class="game-menu-item animated"><span ui-sref="rules" class="game-menu-txt">Правила</span></li>
+		<li class="game-menu-item animated"><span ui-sref="rating" class="game-menu-txt">Рейтинг</span></li>
+	</ul>
+	</div>
+
+	<div class="page-wrapper rules">
+		<div class="rules-pager">
+			<span class="rule-pointer" data-rule="1" ng-click="active_rule=1" ng-class="active_rule==1?'active':''"></span>
+			<span class="rule-pointer" data-rule="2"  ng-click="active_rule=2" ng-class="active_rule==2?'active':''"></span>
+			<span class="rule-pointer" data-rule="3"  ng-click="active_rule=3" ng-class="active_rule==3?'active':''"></span>
+			<span class="rule-pointer" data-rule="4"  ng-click="active_rule=4" ng-class="active_rule==4?'active':''"></span>
+			<span class="rule-pointer" data-rule="5"  ng-click="active_rule=5" ng-class="active_rule==5?'active':''"></span>
+			<span class="rule-pointer" data-rule="6"  ng-click="active_rule=6" ng-class="active_rule==6?'active':''"></span>
+			<span class="rule-pointer" data-rule="7"  ng-click="active_rule=7" ng-class="active_rule==7?'active':''"></span>
+			<span class="rule-pointer" data-rule="8"  ng-click="active_rule=8" ng-class="active_rule==8?'active':''"></span>
+			<span class="rule-pointer" data-rule="9"  ng-click="active_rule=9" ng-class="active_rule==9?'active':''"></span>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==1">
+			<div class="inner-rule-item">
+				<div class="rule-item-img default rule-img-1"></div>
+				<div class="rule-item-txt"> «Российские железные дороги» предлагают тебе принять участие в игре &laquo;Поезд на ИгроМир&raquo; и получить в подарок билет на самую ожидаемую игровую выставку года &laquo;ИгроМир 2015&raquo;. Для этого ты должен набрать наибольшее количество очков в игре! </div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==2">
+			<div class="inner-rule-item">
+				<div class="rule-item-img-wrap-top">
+					<div class="rule-item-img rule-img-2"></div>
+				</div>
+				<div class="rule-item-txt">В нашей игре ты станешь машинистом поезда, на пути которого постоянно возникают разные препятствия.</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==3">
+			<div class="inner-rule-item">
+				<div class="rule-item-img-wrap-top">
+					<div class="rule-item-img rubbish"></div>
+					<div class="rule-item-img car"></div>
+					<div class="rule-item-img children"></div>
+					<div class="rule-item-img walker"></div>
+				</div>
+				<div class="rule-item-txt">Это могут быть люди на путях, играющие на них же дети, неожиданные &laquo;попутчики&raquo;, залезающие на вагоны, или мусор, который кто-то &laquo;заботливо&raquo; положил прямо на рельсы.</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==4">
+			<div class="inner-rule-item">
+				<div class="rule-item-txt">Возникновение препятствий на пути заставляет машиниста экстренно затормаживать поезд, чтобы избежать катастрофы. Твоя задача &mdash; заблаговременно устранять помехи с пути поезда.</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==5">
+			<div class="inner-rule-item">
+				<div class="rule-item-img rule-img-4"></div>
+				<div class="rule-item-txt">Чтобы состав продолжал движение, нужно вовремя убирать препятствия. Чем дальше ты проедешь, тем больше очков наберешь.</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==6">
+			<div class="inner-rule-item">
+				<div class="rule-item-img rule-img-5"></div>
+				<div class="rule-item-txt">Каждый день у тебя будет три попытки набрать максимальное количество очков. </div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==7">
+			<div class="inner-rule-item">
+
+				<div class="rule-item-txt">Игра продлится месяц, и по итогам будут определены 20 человек, показавших лучший результат — при этом будет учитываться не сумма очков за все время, а результаты твоего лучшего заезда. Новый день наступает в 12 часов ночи по московскому времени</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==8">
+			<div class="inner-rule-item">
+				<div class="rule-item-txt">Принять участие в игре могут все желающие, но помни, что в таблице рейтинга фиксируются результаты только в том случае, если ты зарегистрирован на Канобу, либо прошел авторизацию на сайте через социальные сети.</div>
+			</div>
+		</div>
+		<div class="rule-item-frame" ng-show="active_rule==9">
+			<div class="inner-rule-item">
+				<div class="rule-item-txt">Участвовать могут жители любого города, но напоминаем, что в конкурсе разыгрываются только билеты на само мероприятие. Желаем удачи!</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+</script>
+
+
+<!-- rating -->
+
+<script type="text/ng-template" id="tmpl/rating.html">
+
+<div class="main-ui" ng-controller="RatingCtrl">
+    <div class="game-menu start">
+        <ul class="game-menu-list">
+            <li class="game-menu-item play-item animated"><span ui-sref="game" class="game-menu-txt"> Играть </span></li>
+            <li class="game-menu-item animated"><span ui-sref="rules" class="game-menu-txt">Правила</span></li>
+            <li class="game-menu-item animated"><span ui-sref="rating" class="game-menu-txt">Рейтинг</span></li>
+        </ul>
+    </div>
+
+    <div class="page-wrapper rating">
+        <div class="rating-pager-wrapper">
+
+            <!--<div class="rating-top-link"><span class="link-txt">Лидеры</span></div>
+            <div class="rating-me-link"><span  class="link-txt">Где я?</span></div>-->
+
+            <div class="rating-pager center">
+                <span class="page-item" data-page="center_page-2" ng-click="load_page(center_page-2)" ng-class="active_page==center_page-2?'active':''">{{center_page-2}}</span>
+                <span class="page-item" data-page="center_page-1" ng-click="load_page(center_page-1)" ng-class="active_page==center_page-1?'active':''">{{center_page-1}}</span>
+                <span class="page-item" data-page="center_page" ng-click="load_page(center_page)" ng-class="active_page==center_page?'active':''">{{center_page}}</span>
+                <span class="page-item" data-page="center_page+1" ng-click="load_page(center_page+1)" ng-class="active_page==center_page+1?'active':''">{{center_page+1}}</span>
+                <span class="page-item" data-page="center_page+2" ng-click="load_page(center_page+2)" ng-class="active_page==center_page+2?'active':''">{{center_page+2}}</span>
+            </div>
+
+        </div>
+        <div class="game-rating">
+            <ul class="game-rating-list">
+                <li class="game-rating-item rating-header">
+                    <div class="rating-item-position">Позиция</div>
+                    <div class="rating-item-nickname">Никнейм</div>
+                    <div class="rating-item-score">Очки</div>
+                </li>
+
+                <li class="game-rating-item" ng-repeat="item in places">
+                    <div class="rating-item-position">{{item.place}}</div>
+                    <div class="rating-item-nickname" ng-class="item.nickname.length>23?'longname':''">{{item.nickname}}</div>
+                    <div class="rating-item-score">{{item.score}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</script>
+
+
+<!-- game -->
+
+<script type="text/ng-template" id="tmpl/game.html">
+	<div ng-controller="GameCtrl">
+		<div class="assets-preloader"></div>
+		<div class="game-status-finish" ng-show="game_finished" ng-include="'tmpl/includes/game_over.window.html'" scope="" onload="" ng-if="game_finished" scope="" onload=""></div>
+	</div>
+</script>
+
+
+<!-- TIPS -->
+
+<script type="text/ng-template" id="tmpl/includes/highway.tip.html">
+<div class="game-tip-window tip-2">
+	<div class="tip-bg-gradient"></div>
+	<div class="tip-hero hero-2" ng-click="close_this_tip()"></div>
+	<div class="tip-msg-wrap" ng-click="close_this_tip()">
+		<span class="tip-txt"> Не знаю, что эти автомобилисты забыли на железнодорожных путях, но кажется, лучше убрать их с дороги, а то они точно никуда не доедут. </span>
+	</div>
+</div>
+</script>
+
+<script type="text/ng-template" id="tmpl/includes/junk.tip.html">
+<div class="game-tip-window tip-2">
+	<div class="tip-bg-gradient"></div>
+	<div class="tip-hero hero-1" ng-click="close_this_tip()"></div>
+	<div class="tip-msg-wrap" ng-click="close_this_tip()">
+		<span class="tip-txt"> Машинист обязан применять экстренное торможение, если видит посторонние предметы на пути, и поезд может сойти с рельсов. Давай-ка лучше приберемся. </span>
+	</div>
+</div>
+</script>
+
+<script type="text/ng-template" id="tmpl/includes/kids.tip.html">
+<div class="game-tip-window tip-2">
+	<div class="tip-bg-gradient"></div>
+	<div class="tip-hero hero-2" ng-click="close_this_tip()"></div>
+	<div class="tip-msg-wrap" ng-click="close_this_tip()">
+		<span class="tip-txt"> О, кажется, они заметили поезд, но боятся пошевелиться. Отведи их в сторону, думаю, они уже поняли свою ошибку и больше не будут играть так близко к путям. </span>
+	</div>
+</div>
+</script>
+
+
+<script type="text/ng-template" id="tmpl/includes/lights.tip.html">
+<div class="game-tip-window tip-2">
+	<div class="tip-bg-gradient"></div>
+	<div class="tip-hero hero-2" ng-click="close_this_tip()"></div>
+	<div class="tip-msg-wrap" ng-click="close_this_tip()">
+		<span class="tip-txt"> Этим людям грозит опасность, а они даже не понимают этого. Я, конечно, могу остановить поезд, но может, ты сам их отведешь в безопасное место? </span>
+	</div>
+</div>
+</script>
+
+
+<script type="text/ng-template" id="tmpl/includes/phones.tip.html">
+<div class="game-tip-window tip-1">
+	<div class="tip-bg-gradient"></div>
+	<div class="tip-hero hero-1" ng-click="close_this_tip()"></div>
+	<div class="tip-msg-wrap" ng-click="close_this_tip()">
+		<span class="tip-txt"> УХОДИ С ПУТЕЙ! Не слышит...В общем, нажми на гудок. Всему виной наушники, именно из-за них ты можешь не услышать звук приближающегося поезда. </span>
+	</div>
+</div>
+</script>
+
+
+<script type="text/ng-template" id="tmpl/includes/runner.tip.html">
+<div class="game-tip-window tip-2">
+	<div class="tip-bg-gradient"></div>
+	<div class="tip-hero hero-1" ng-click="close_this_tip()"></div>
+	<div class="tip-msg-wrap" ng-click="close_this_tip()">
+		<span class="tip-txt"> Посмотри на них, они вот-вот сорвутся с крыши. Давай побыстрее их снимем, а то эта поездка закончится плохо для всех.</span>
+	</div>
+</div>
+</script>
+
+<script type="text/ng-template" id="tmpl/includes/delorean.tip.html">
+    <div class="game-tip-window tip-2">
+        <div class="tip-bg-gradient"></div>
+        <div class="tip-hero hero-4" ng-click="close_this_tip()"></div>
+        <div class="tip-msg-wrap" ng-click="close_this_tip()">
+            <span class="tip-txt"> Док, Док! Боже, неужели опять 2015-ый? Мне кажется, или эта штука сзади очень быстро к нам приближается? Если задуматься, то кататься по рельсам было не самой удачной идеей, Док. Гони! </span>
+        </div>
+    </div>
+</script>
+
+<!-- gameover -->
+<script type="text/ng-template" id="tmpl/includes/game_over.window.html">
+<div class="game-over-window  animated fadeIn">
+
+	<div class="result-block">
+		<div class="result-line">
+			<div class="result-label result-label-score">
+				<span class="result-label-txt result-label-txt-score">Очки:</span>
+			</div>
+			<div class="result-value">
+				<span class="result-value-txt result-value-txt-score">{{ game_result.score }}</span>
+			</div>
+		</div>
+
+		<div class="result-line">
+			<div class="result-label result-label-score">
+				<span class="result-label-txt">Поделиться:</span>
+			</div>
+			<div class="result-value">
+				<div class="share-block inline">
+
+
+					<a class="share-link vk" href="http://vkontakte.ru/share.php?url={{share_link}}&description={{share_txt}}" target="_blank"></a>
+					<a class="share-link ok" href="http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl={{share_link}}&st.comments={{share_txt}}" target="_blank"></a>
+					<a class="share-link tw" href="http://www.twitter.com/share?url={{share_link}}&text={{share_txt}}" target="_blank"></a>
+					<a class="share-link fb" href="http://www.facebook.com/sharer.php?s=100&p[url]={{share_link}}&p[summary]={{share_txt}}&p[title]={{share_title}}" target="_blank"></a>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="result-line">
+			<div class="result-label">
+				<span class="result-label-txt">Твое место в рейтинге:</span>
+			</div>
+			<div class="result-value">
+				<span class="result-value-txt" ng-if="is_user&&game_result.lives>0">{{ game_result.place }} </span>
+				<span class="result-value-txt" ng-if="!is_user || game_result.lives==0">{{ game_result.place }} (вне конкурса)*</span>
+			</div>
+		</div>
+
+		<div class="result-line">
+			<div class="result-label result-label-score">
+				<span class="result-label-txt">Осталось попыток сегодня:</span>
+			</div>
+			<div class="result-value">
+				<span class="result-value-txt">{{game_result.livesLeft}}</span>
+			</div>
+		</div>
+
+		<div class="result-line-options">
+			<div class="result-label result-label-score">
+				<span class="play-more-btn" ng-click="reload_game()">Играть еще раз</span>
+			</div>
+			<div class="result-value">
+				<span class="rating-link" ui-sref="rating" ng-if="is_user">Рейтинг</span>
+				<span class="rating-link" ui-sref="rating" ng-if="!is_user" ng-click="init_login()">Логин</span>
+			</div>
+		</div>
+
+		<div class="results-sub-info">
+			* Для того, чтобы твои очки отображались в общем рейтинге &mdash;  зарегистрируйся на сайте или пройди авторизацию.<br>
+			По истечению трех игровых попыток, ты можешь продолжить игру, но очки не будут учитываться в рейтинге.
+		</div>
+
+	</div>
+</div>
+
+</script>

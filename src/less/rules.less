@@ -1,0 +1,154 @@
+.page-wrapper.rules{
+	
+	width: 80rem;
+	//margin-top: 2rem;
+	//margin-left: 2rem;
+	display: block;
+	text-align: center;
+	position: absolute;
+	top: 10%;
+	left: 5%;
+	height: 52rem;
+
+	.rules-pager{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 7rem;
+		background-color: fade(@window-blue-light, 60%);
+		border-radius: 1.5rem;
+
+		.rule-pointer{
+			display: inline-block;
+			width: 1.5rem;
+			height: 1.5rem;
+			margin: 2rem;
+			border: 3px solid #82AACA;
+			border-radius: 50%;
+			cursor: pointer;
+
+			&.active{
+				width: 2.3rem;
+				height: 2.3rem;
+				position: relative;
+				top:0.4rem;
+				border: 3px solid #72B5D7;
+			}
+		}
+	}
+
+	.rule-item-frame{
+		width: 100%;
+		height: 70%;
+		background-color: fade(@window-blue-light, 60%);
+		box-sizing: border-box;
+		border-radius: 1.5rem;
+		//border: 3px solid fade(@window-blue-light, 50%);
+		padding: 1.5rem 1.8rem;
+
+		display: inline-table;
+
+		&.active{
+			display: inline-table;
+		}
+
+		.inner-rule-item{
+			width: 100%;
+			height: 100%;
+			display: table-cell;
+			vertical-align: middle;
+    		text-align: center;
+		}
+	}
+
+	.rule-item{
+		//display: block;
+		display: inline-block;
+    	width: 45%;
+		border-radius: 1.5rem;
+		border: 3px solid @color-green-dark;
+		margin: 0.8rem 0;
+		background-color: @color-grass;
+		box-sizing: border-box;
+		min-height: 5rem;
+		padding: 1rem;
+		position: relative;
+	}
+
+	.rule-item-img{
+		display: inline-block;
+		width: 12rem;
+		height: 12rem;
+
+		background-image: url('../assets/ui/train_demo_300.png');
+		background-size: cover;
+		vertical-align: top;
+		background-repeat: no-repeat;
+
+		&.default{
+			width: 10rem;
+			height: 10rem;
+		}
+
+		&.rule-img-2{
+			background-image: url('../assets/ui/tips_1/rules_2.png');
+			background-size: cover;
+			vertical-align: top;
+		}
+
+		&.rule-img-4{
+			background-image: url('../assets/ui/tips_1/rules_4.png');
+			background-size: cover;
+			vertical-align: top;
+		}
+
+		&.rule-img-5{
+			background-image: url('../assets/ui/tips_1/rules_5.png');
+			background-size: contain;
+			vertical-align: top;
+		}
+
+		&.rubbish{
+			background-image: url('../assets/ui/tips_1/rules_3.png');
+			background-size: cover;
+			vertical-align: top;
+		}
+
+		&.walker{
+			background-image: url('../assets/ui/tips_1/rules_3_2.png');
+			background-size: cover;
+			vertical-align: top;
+		}
+
+		&.children{
+			background-image: url('../assets/ui/tips_1/rules_3_3.png');
+			background-size: cover;
+			vertical-align: top;
+		}
+
+		&.car{
+			background-image: url('../assets/ui/tips_1/rules_3_1.png');
+			background-size: cover;
+			vertical-align: top;
+		}
+
+	}
+
+	.rule-item-img-wrap-top{
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 1rem;
+	}
+
+
+	.rule-item-txt{
+		display: inline-block;
+		//width: ~"calc(100% - 12rem)";
+		width: 98%;
+		color: @color-light-1;
+		font-family: 'GProMedium', Tahoma, Arial;
+		font-size: 2.8rem;
+		padding: 0 1.2rem;
+	}
+
+}

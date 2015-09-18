@@ -1,0 +1,212 @@
+
+.game-tip-window{
+	position: absolute;
+	bottom:0;
+	width: 100%;
+	height: 12rem;
+
+	.tip-hero{
+
+		position: absolute;
+		bottom:0;
+		right: 0;
+		width: 22.5rem;
+		height: 22.5rem;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		/* spider man */
+		&.hero-1{
+			background-image: url('../assets/ui/hero_spider.png');
+		}
+
+		/* superman */
+		&.hero-2{
+			background-image: url('../assets/ui/hero_2.png');
+		}
+
+		/* san andreas */
+		&.hero-3{
+			background-image: url('../assets/ui/hero_3.png');
+		}
+
+        /* BttF */
+        &.hero-4{
+            background-image: url('../assets/ui/hero_4.png');
+        }
+	}
+
+	.tip-msg-wrap{
+
+		width: 83rem;
+    	height: 13rem;
+		background-image: url('../assets/ui/tip_back.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		position: absolute;
+		right: 20rem;
+		bottom: 2.5rem;
+		padding: 1.5rem 6rem 1.5rem 3rem;
+    	box-sizing: border-box;
+
+	}
+
+
+	.tip-txt{
+		width: 100%;
+		text-align: center;
+		color: @color-light-1;
+		font-family: 'GProMedium', Tahoma, Arial;
+		font-size: 2.2rem;
+	}
+
+}
+
+.game-over-window{
+
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('../assets/ui/game_over.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.share-block{
+
+		position: absolute;
+		top: 1rem;
+    	//left: 49.5rem;
+    	right:1rem;
+
+    	&.inline{
+    		position: relative;
+    		top: 0.6rem;
+    		left: 0;
+    		display: inline-block;
+    	}
+
+		.share-link{
+			display: inline-block;
+			width: 3rem;
+			height: 3rem;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			margin: 0.2rem;
+			cursor: pointer;
+
+			&.vk{
+				background-image: url('../assets/ui/social/vk.png');
+			}
+			&.fb{
+				background-image: url('../assets/ui/social/fb.png');
+			}
+			&.ok{
+				background-image: url('../assets/ui/social/ok.png');
+				background-size: 97% 100%;
+			}
+			&.tw{
+				background-image: url('../assets/ui/social/tw2.png');
+				background-size: 100% 98%;
+			}
+
+			.vk-path{
+				stroke: #ae4;
+				fill: #ae4;
+			}
+
+		}
+
+
+	}
+
+	.result-block{
+		height: 28rem;
+		width: 100%;
+		position: absolute;
+		bottom:0;
+	}
+
+	.result-line{
+		display: block;
+		width: 100%;
+	}
+
+	.result-line-options{
+		margin-top: 2.5rem;
+	}
+
+	.result-label{
+		width: 50%;
+		display: inline-block;
+		padding-right: 2rem;
+    	box-sizing: border-box;
+    	text-align: right;
+	}
+
+	.result-value{
+		width: 49%;
+		display: inline-block;
+		text-align: left;
+	}
+
+	.result-label-txt{
+
+		color: @color-light-1;
+		font-family: 'GProMedium', Tahoma, Arial;
+		font-size: 1.9rem;
+
+		&.result-label-txt-score{
+			font-size: 3rem;
+		}
+	}
+
+	.result-value-txt{
+
+		color: @color-light-1;
+		font-family: 'GProMedium', Tahoma, Arial;
+		font-size: 2.6rem;
+
+		&.result-value-txt-score{
+			font-size: 4.2rem;
+		}
+	}
+
+	.play-more-btn{
+		color: @color-light-1;
+		font-family: 'GProExtend', Tahoma, Arial;
+		font-size: 2.5rem;
+		text-transform: uppercase;
+		cursor: pointer;
+		border: 2px solid;
+    	padding: 0.2rem 1.6rem;
+    	border-radius: 0.3rem;
+	}
+
+	.rating-link{
+		color: @color-light-1;
+		font-family: 'GProExtend', Tahoma, Arial;
+		font-size: 2.8rem;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		border: 2px solid;
+    	padding: 0.2rem 1.6rem;
+    	border-radius: 0.3rem;
+	}
+
+	.results-sub-info{
+		position: absolute;
+		bottom: 0;
+		width: 80%;
+		display: block;
+		margin: auto;
+		color: @color-light-1;
+		font-family: 'GProExtend', Tahoma, Arial;
+		font-size: 1.4rem;
+		margin: 0.8rem 10%;
+	}
+
+}

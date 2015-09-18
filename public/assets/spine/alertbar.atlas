@@ -1,0 +1,20 @@
+
+alertbar.png
+size: 256,32
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bar
+  rotate: false
+  xy: 98, 18
+  size: 80, 8
+  orig: 80, 8
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 2, 2
+  size: 94, 24
+  orig: 94, 24
+  offset: 0, 0
+  index: -1

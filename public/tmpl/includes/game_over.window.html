@@ -1,0 +1,68 @@
+<div class="game-over-window animated fadeIn">
+	
+	<!--<div class="share-block">
+		<a class="share-link fb"></a>
+		<a class="share-link vk"></a>
+		<a class="share-link ok"></a>
+		<a class="share-link tw"></a>
+	</div>-->
+
+	<div class="result-block">
+		<div class="result-line">
+			<div class="result-label result-label-score">
+				<span class="result-label-txt result-label-txt-score">Очки:</span>
+			</div>
+			<div class="result-value">
+				<span class="result-value-txt result-value-txt-score">{{ game_result.score }}</span>
+			</div>
+		</div>
+		<div class="result-line">
+			<div class="result-label result-label-score">
+				<span class="result-label-txt result-label-txt-score">Поделиться:</span>
+			</div>
+			<div class="result-value">
+				<div class="share-block inline">
+					<a class="share-link vk" href="http://vkontakte.ru/share.php?url=http://kanobu.ru/special/rzd/&description={{share_txt}}" target="_blank"></a>
+					<a class="share-link ok" href="http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st.comments=Actimel_Kids'&st._surl=http://kanobu.ru/special/rzd/&st.comments=={{share_txt}}" target="_blank"></a>
+					<a class="share-link tw" href="http://www.twitter.com/share?url=http://kanobu.ru/special/rzd/&text={{share_txt}}"></a>
+					<a class="share-link fb" href="http://www.facebook.com/sharer.php?u=http://kanobu.ru/special/rzd/&p[summary]={{share_txt}}"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="result-line">
+			<div class="result-label">
+				<span class="result-label-txt">Твое место в рейтинге:</span>
+			</div>
+			<div class="result-value">
+				<span class="result-value-txt" ng-if="is_user&&game_result.lives>0">{{ game_result.place }} </span>
+				<span class="result-value-txt" ng-if="!is_user || game_result.lives==0">{{ game_result.place }} (вне конкурса)*</span>
+			</div>
+		</div>
+
+		<div class="result-line">
+			<div class="result-label result-label-score">
+				<span class="result-label-txt">Осталось попыток сегодня:</span>
+			</div>
+			<div class="result-value">
+				<span class="result-value-txt">{{game_result.lives}}</span>
+			</div>
+		</div>
+
+		<div class="result-line-options">
+			<div class="result-label result-label-score">
+				<span class="play-more-btn" ng-click="reload_game()">Играть еще раз</span>
+			</div>
+			<div class="result-value">
+				<span class="rating-link" ui-sref="rating" ng-if="is_user">Рейтинг</span>
+				<span class="rating-link" ui-sref="rating" ng-if="!is_user" ng-click="init_login()">Логин</span>
+			</div>
+		</div>
+
+		<div class="results-sub-info">
+			* Для того, чтобы твои очки отображались в общем рейтинге &mdash;  зарегистрируйся на сайте или пройди авторизацию.<br>
+			По истечению трех игровых попыток, ты можешь продолжить игру, но очки не будут учитываться в рейтинге.
+		</div>
+
+	</div>
+</div>

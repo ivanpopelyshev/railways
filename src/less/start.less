@@ -1,0 +1,153 @@
+.view-wrapper{
+	display: inline-block;
+}
+
+.viewport{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* fullscreen button */
+.fullscreen-btn{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 5.3rem;
+	height: 5.3rem;
+	background-image: url('../assets/fullscreen.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	cursor: pointer; 
+	top: 0.2rem;
+    left: 0.2rem;
+}
+
+.uiport{
+
+	background: transparent;
+	background-image: url('../assets/ui/bg_back_2.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+   	position: absolute;
+	top: 0;
+	left: 0;
+
+	&.game-active{
+		display: none;
+	}
+
+	.game-name{
+		position: absolute;
+		top: 17%;
+		left: 6.5%;
+
+		width: 22%;
+		height: 20%;
+		
+		background-image: url('../assets/ui/game_name.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	.rjd-name{
+		position: absolute;
+		bottom: 5%;
+		right: 3%;
+		width: 11.5%;
+		height: 12%;
+		background-image: url('../assets/ui/rjd_logo_white.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
+.main-ui{
+	width: 100%;
+	height: 100%;
+}
+
+.game-menu{
+
+	&.start {
+		//margin-top:20%;
+		width: 20%;
+		position: absolute;
+		right:5%;
+		top: 10%;
+	}
+
+	&.bottom {
+		position: absolute;
+		bottom: 1rem;	
+	}
+
+	.game-menu-list{
+		text-align: center;
+	}
+
+	.game-menu-item{
+		display: inline-table;
+		position: relative;
+		width: 25.7rem;
+		height: 4.8rem;
+
+		min-width: 60px;
+		min-height: 14px;
+
+		border-radius: 0.5rem;
+		//border: 3px solid @color-green-dark;
+		//margin: 3% 0;
+		margin-bottom: 3%;
+		background-color: @btn-blue;
+		box-sizing: border-box;
+		overflow: hidden;
+		color: @txt-white;
+
+		&.play-item{
+			background-color: @btn-red;
+
+			&:hover{
+				background-color: lighten(@btn-red, 10%);
+			}
+		}
+
+		&:hover{
+			background-color: lighten(@btn-blue, 10%);
+			cursor: pointer;
+		}
+	}
+
+	.game-menu-txt{
+		//font-family: 'GProMedium', Tahoma, Arial;
+		font-family: 'GRegular', Tahoma, Arial;
+		font-size: 2.4rem;
+		text-transform: uppercase;
+		height: 100%;
+	    display: table-cell;
+	    vertical-align: middle;
+	    text-align: center;
+	    max-width: 100%;
+	    overflow: hidden;
+	    color: @txt-white;
+	}
+
+}
+
+.view-msg{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.view-msg-container{
+
+}
+
+
+

@@ -1,0 +1,58 @@
+html{
+    font-size: 10px;
+}
+
+
+body { 
+    background: transparent; 
+    margin: 0;
+    color: @color-black;
+    font-size: 1.6rem;
+}
+
+canvas {
+    
+    }
+
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li{
+        margin: 0;
+        display: inline-block;
+    }
+}
+
+
+
+.game-canvas {
+    position: absolute;
+    /*image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -o-crisp-edges;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;*/
+ }
+
+.outer-container {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    overflow: hidden;
+}
+
+
+.inner-container {
+    position: relative;
+    overflow: hidden;
+}
+
+#frontCanvas {
+    pointer-events: none;
+}

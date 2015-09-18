@@ -1,0 +1,41 @@
+<div class="main-ui" ng-controller="RatingCtrl">
+	<div class="game-menu start">
+	<ul class="game-menu-list">
+		<li class="game-menu-item play-item animated"><span ui-sref="game" class="game-menu-txt"> Играть </span></li>
+		<li class="game-menu-item animated"><span ui-sref="rules" class="game-menu-txt">Правила</span></li>
+		<li class="game-menu-item animated"><span ui-sref="rating" class="game-menu-txt">Рейтинг</span></li>
+	</ul>
+	</div>
+
+	<div class="page-wrapper rating">
+		<div class="rating-pager-wrapper">
+
+			<!--<div class="rating-top-link"><span class="link-txt">Лидеры</span></div>
+			<div class="rating-me-link"><span  class="link-txt">Где я?</span></div>-->
+
+			<div class="rating-pager center">
+				<span class="page-item" data-page="center_page-2" ng-click="load_page(center_page-2)" ng-class="active_page==center_page-2?'active':''">{{center_page-2}}</span>
+				<span class="page-item" data-page="center_page-1" ng-click="load_page(center_page-1)" ng-class="active_page==center_page-1?'active':''">{{center_page-1}}</span>
+				<span class="page-item" data-page="center_page" ng-click="load_page(center_page)" ng-class="active_page==center_page?'active':''">{{center_page}}</span>
+				<span class="page-item" data-page="center_page+1" ng-click="load_page(center_page+1)" ng-class="active_page==center_page+1?'active':''">{{center_page+1}}</span>
+				<span class="page-item" data-page="center_page+2" ng-click="load_page(center_page+2)" ng-class="active_page==center_page+2?'active':''">{{center_page+2}}</span>
+			</div>
+
+		</div>
+		<div class="game-rating">
+			<ul class="game-rating-list">
+				<li class="game-rating-item rating-header">
+					<div class="rating-item-position">Позиция</div>
+					<div class="rating-item-nickname">Никнейм</div>
+					<div class="rating-item-score">Очки</div>
+				</li>
+
+                <li class="game-rating-item" ng-repeat="item in places">
+					<div class="rating-item-position">{{item.place}}</div>
+					<div class="rating-item-nickname" ng-class="item.nickname.length>23?'longname':''">{{item.nickname}}</div>
+					<div class="rating-item-score">{{item.score}}</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,10 @@
+<div class="viewport"></div>
+<div class="uiport" ng-show="!game_active" ng-transclude></div>
+<div class="fullscreen-btn" ng-click="open_fullscreen()"></div>
+
+<div ui-view="view-msg" class="message-box" ng-controller="TipsCtrl" ng-show="game_active">
+    <div ng-if="is_opened">
+		<div ng-include="'tmpl/includes/'+current_tip +'.tip.html'" scope="" onload="" class="view-msg-container"></div>
+	</div>
+	<div ng-include="'tmpl/includes/game_over.window.html'" scope="" onload="" ng-if="game_finished"></div>
+</div>
