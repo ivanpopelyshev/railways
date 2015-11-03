@@ -7,7 +7,7 @@ Railways game based on pixi.js and its plugins. All visual art is property of Ru
 
 [Playable version for russian railways](https://gameofbombs.com/demos/railroad/v3/#/game)
 
-[First demo, station-based screen transition](https://gameofbombs.com/demos/railroad/)
+[First demo, station-based screen transition](https://gameofbombs.com/demos/railroad/v1/)
 
 [Multiple ways, switches](https://gameofbombs.com/demos/railroad/v2/)
 
